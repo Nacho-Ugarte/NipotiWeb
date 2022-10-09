@@ -1,0 +1,49 @@
+body{
+    background-image: url(../img/landing-web.png);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: cover;
+    height: 45vw;
+}
+
+@font-face {
+    font-family: Trade Gothic;
+    src: url(/fonts/Trade\ Gothic\ LT\ Bold\ Condensed\ No.\ 20.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+form{
+    font-family: Trade Gothic;
+    font-weight: bold;
+    color: rgb(80, 88, 107);
+}
+input{
+    background-color: rgb(226, 208, 201);
+    border-radius: 5px;
+    border: 0 ;
+
+}
+
+#boton{
+    font-family: Trade Gothic;
+    font-style: normal;
+    font-weight: bold;
+    background-color: rgb(122, 67, 71);
+    color: rgb(227, 206, 202);
+    height: 40px;
+    transition-property: transform, box-shadow;
+    transition-duration: .6s;
+}
+
+#boton,
+#boton:hover {
+    cursor: pointer;
+}
+
+#boton:active {
+    font-size: 1rem;
+    transform: scale(.9);
+    box-shadow: 0 3px 15px -2px;
+}
