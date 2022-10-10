@@ -1,10 +1,10 @@
 body{
     background-image: url(../img/landing-webFinal.png);
     background-repeat:no-repeat;
-    background-position-x:center;
-    background-position-y:center;
+    background-position:center center;
+    background-attachment: fixed;
     background-size: cover;
-    height: 45vw;
+    min-height: 100vh;
 }
 
 @font-face {
@@ -13,7 +13,12 @@ body{
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: Canter Bold;
+    src: url(/fonts/Canter\ Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
 form{
     font-family: Trade Gothic;
     font-weight: bold;
@@ -23,9 +28,7 @@ input{
     background-color: rgb(226, 208, 201);
     border-radius: 5px;
     border: 0 ;
-
 }
-
 #boton{
     font-family: Trade Gothic;
     font-style: normal;
@@ -46,4 +49,68 @@ input{
     font-size: 1rem;
     transform: scale(.9);
     box-shadow: 0 3px 15px -2px;
+}
+.texto{
+display: flex;
+text-align: center;
+flex-direction: column;
+max-width: 12vh;
+font-family: Canter bold;
+font-weight: bold;
+color: rgb(122, 67, 71);
+font-size: large;
+}
+
+#container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50%;
+    width: 50%;
+}
+.form__code{
+    display: flex;
+    justify-content: center;
+    grid-area: codigo;
+}
+.form__line{
+    display: flex;
+    flex-direction: row;
+}
+#lower{
+    display: flex;
+    justify-content: center;
+    grid-area: submit;
+}
+.grupo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+#container form {
+    width: 70%;
+    display: grid;
+    row-gap: 10px;
+    grid-template-areas: 
+    "codigo codigo" 
+    "nombre apellido" 
+    "dni celular"
+    "submit submit";
+}
+body a {
+    position: fixed;
+    margin-top: 78vh;
+    margin-left: 10vw;
+    aspect-ratio: 1 / 1;
+    width: 5vh;
+}
+#img_toRight {
+    margin-left: 18vw;
+}
+.grupo input {
+    width: 95%;
+    height: 30px;
 }
