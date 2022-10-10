@@ -98,8 +98,8 @@ router.get("/", async (req, res) => {
 })
 
 router.post("/", async (req, res) => {
-    const { dni, name, surname, code, telephone } = req.body
-    console.log(req.body)
+    // const { dni, name, surname, code, telephone } = req.body
+    // console.log(req.body)
     // let login = await User.findOrCreate({
     //     dni,
     //     name,
@@ -109,33 +109,11 @@ router.post("/", async (req, res) => {
     // })
 
 
-    try {
-        if (!login) {
-            logineditado = await User.create(
-                dni,
-                name,
-                surname,
-                telephone,
-            )
-        } else {
-            const cargado = codigos.find((ele) => ele.codigo === code)
-
-
-
-            if (cargado.nuevo === false) {
-                cargado.nuevo = true
-                console.log(login)
-            }
-
-            res.send("NO GANASTE")
-        }
+        res.send("Conectado")
 
 
 
 
-    } catch (error) {
-        console.log(error);
-    }
 })
 
 module.exports = router;

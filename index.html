@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,39 +9,43 @@
     <!--Favicon puede que sea muy chico, modificar(?-->
     <link rel="icon" type="image/x-icon" href="./img/favicon-Nipoti.png" />
     <title>Busca pasta</title>
-
 </head>
+
 <body>
     <div id="container">
-        <form target="_blank">
+        <form class="formulario">
             <!-- codigo -->
             <label for="codigo">Código</label>
-            <input type="codigo">
+            <input class="codigo" type="codigo">
             <!-- nombre -->
             <label for="nombre">Nombre</label>
-            <input type="nombre" id="nombre">
+            <input class="nombre" type="nombre" id="nombre">
             <!-- apellido -->
             <label for="apellido">Apellido</label>
-            <input type="apellido" id="apellido">
+            <input class="apellido" type="apellido" id="apellido">
             <!-- dni -->
             <label for="dni">DNI</label>
-            <input type="dni" placeholder="(Sin puntos)" id="documento">
+            <input class="dni" type="dni" placeholder="(Sin puntos)" id="documento">
             <!-- celular -->
             <label for="celular">Celular</label>
-            <input type="celular" id="telefono">
+            <input class="celular" type="celular" id="telefono">
 
-            <div id="lower">
-                <!-- Submit Button -->
-                <input type="submit" value="ENVIAR" id="boton">
-            </div>
-        </form>       
+
+            <!-- Submit Button -->
+            <input type="submit" value="ENVIAR" id="boton">
+
+        </form>
     </div>
 
     <div class="redes">
-        <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank" ><img src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
-        <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank" ><img src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
-        <script src="./app.js"></script>
+        <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank"><img
+                src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
+        <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank"><img
+                src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
 
     </div>
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
+
 </html>
