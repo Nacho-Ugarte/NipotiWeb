@@ -51,7 +51,7 @@ function lectura (){
         
             
                 (prueba.nombre=nombre,
-                //alert(`Felicitaciones ${platoPasta.nombre} te ganaste un plato de pasta`),
+                //alert(`Felicitaciones ${platoPasta.nombre}, te ganaste un plato de pasta`),
                 prueba.nuevo=false,
                 prueba.documento=documento,
                 prueba.nombre=nombre,
