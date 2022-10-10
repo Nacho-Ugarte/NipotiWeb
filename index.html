@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <!--Favicon puede que sea muy chico, modificar(?-->
     <link rel="icon" type="image/x-icon" href="./img/favicon-Nipoti.png" />
     <title>Busca pasta</title>
@@ -18,16 +18,16 @@
             <input type="codigo">
             <!-- nombre -->
             <label for="nombre">Nombre</label>
-            <input type="nombre">
+            <input type="nombre" id="nombre">
             <!-- apellido -->
             <label for="apellido">Apellido</label>
-            <input type="apellido">
+            <input type="apellido" id="apellido">
             <!-- dni -->
             <label for="dni">DNI</label>
-            <input type="dni" placeholder="(Sin puntos)">
+            <input type="dni" placeholder="(Sin puntos)" id="documento">
             <!-- celular -->
             <label for="celular">Celular</label>
-            <input type="celular">
+            <input type="celular" id="telefono">
 
             <div id="lower">
                 <!-- Submit Button -->
@@ -36,8 +36,11 @@
         </form>       
     </div>
 
-    <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank" ><img src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
-    <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank" ><img src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
-    <script src="./app.js"></script>
+    <div class="redes">
+        <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank" ><img src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
+        <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank" ><img src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
+        <script src="./app.js"></script>
+
+    </div>
 </body>
 </html>
