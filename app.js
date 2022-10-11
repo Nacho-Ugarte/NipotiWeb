@@ -40,7 +40,7 @@ enviar.addEventListener("submit", (e) => {
                     localStorage.setItem("nombre",payload.nombre)
                     console.log(res.data)
                     if (res.data === "NO WIN") {
-                        // window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/perdedor.html"
+                        window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/perdedor.html"
                     } else {
                         window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/ganador.html"
                         getLocalStorage()
