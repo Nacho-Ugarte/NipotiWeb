@@ -29,9 +29,9 @@ router.post("/", async (req, res) => {
                 else{
                 const cargado = codigos.find((ele) => ele.codigo === codigo)
                     
-                if (cargado) {
+                if (cargado && cargado.premio === true) {
                     console.log(cargado)
-                    cargado.nuevo = true
+                    cargado.premio = false
                     login.update({
                         ...login,
                         cargas:[...login.cargas,{
@@ -68,8 +68,8 @@ router.post("/", async (req, res) => {
                 
                 const cargado = codigos.find((ele) => ele.codigo === codigo)
     
-                if (cargado && cargado.nuevo) {
-                    cargado.nuevo = true
+                if (cargado && cargado.premio === true) {
+                    cargado.premio = false
                     const modificaion = await userCreated.update({
                         ...userCreated,
                         cargas:[...userCreated.cargas,{

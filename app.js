@@ -38,7 +38,7 @@ enviar.addEventListener("submit", (e) => {
             axios.post("http://localhost:3001/", payload)
                 .then(res => {
                     localStorage.setItem("nombre",payload.nombre)
-                    console.log(res.data)
+                    localStorage.setItem("apellido",payload.apellido)
                     if (res.data === "NO WIN") {
                         window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/perdedor.html"
                     } else {
