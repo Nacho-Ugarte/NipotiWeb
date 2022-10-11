@@ -28,10 +28,8 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-
     height: 74px;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -55,11 +53,11 @@ footer {
     width: auto;
 }
 @media (max-width: 800px){
-body{
+    body{
         background-image: url(../img/winner-mobileFinal.png);
-    }
-.footer{
-        width: 100%;
-        height:60px ;
-    }
+        }
+    footer{
+    width: 100%;
+    margin-top: 20px;
+        }
 }
