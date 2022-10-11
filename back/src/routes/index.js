@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
                 //Si ya tiene un codigo exitoso
                 let searchExitCode = await login.cargas.find((ele) => ele.resultado === "win")
                 if(searchExitCode){
-                    res.json({result:"NO WIN",loser:login})
+                    res.send("NO WIN")
                 }
 
                 //Si no tiene un codigo exitoso
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
                             resultado: "win"
                         }]
                     })
-                    res.json({result:"WIN",winner:login})
+                    res.send("WIN")
                 }else{
                     login.update({
                         ...login,
@@ -48,7 +48,8 @@ router.post("/", async (req, res) => {
                             resultado: "lose"
                         }]
                     })
-                    res.json({result:"NO WIN", loser:login})
+                    res.send("NO WIN")
+                    console.log(login)
                 }
                 }
                 
@@ -69,23 +70,23 @@ router.post("/", async (req, res) => {
     
                 if (cargado && cargado.nuevo) {
                     cargado.nuevo = true
-                    const winner = await userCreated.update({
+                    const modificaion = await userCreated.update({
                         ...userCreated,
                         cargas:[...userCreated.cargas,{
                             codigo:codigo,
                             resultado: "win"
                         }]
                     })
-                    res.json({result:"WIN",winner:winner})
+                    res.send("WIN")
                 }else{
-                    const loser = userCreated.update({
+                    userCreated.update({
                         ...userCreated,
                         cargas:[...userCreated.cargas,{
                             codigo:codigo,
                             resultado: "lose"
                         }]
                     })
-                    res.json({result:"NO WIN",loser:loser})
+                    res.send("NO WIN")
                 }
     
             }
