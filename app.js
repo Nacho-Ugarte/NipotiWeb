@@ -1,12 +1,3 @@
-
-// let info = {
-//     nombre: nombre.split(' ').join('')
-// }
-// function saveLocalStorage(name) {
-//     localStorage.setItem("nombre", info.nombre)
-
-// };
-
 function getLocalStorage() {
 
     console.log(localStorage.getItem("nombre"))
@@ -35,15 +26,16 @@ enviar.addEventListener("submit", (e) => {
 
         if ((codigo.split(' ').join('').length !== 5) || (nombre === "") || (apellido === "") || (dni === "") || (celular === "")) {
             alert("Alguno de los datos solicitados es incorrecto");
+            console.log(window.location.href)
         } else {
             axios.post("http://localhost:3001/", payload)
                 .then(res => {
                     localStorage.setItem("nombre",payload.nombre)
                     localStorage.setItem("apellido",payload.apellido)
                     if (res.data === "NO WIN") {
-                        window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/perdedor.html"
+                        window.location.href = "http://127.0.0.1:5500/perdedor.html"
                     } else {
-                        window.location.href = "file:///C:/Users/Maxi/Contacts/Desktop/NipotiWeb/ganador.html"
+                        window.location.href = "http://127.0.0.1:5500/ganador.html"
                         getLocalStorage()
                     }
                 })

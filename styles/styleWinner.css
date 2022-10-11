@@ -34,10 +34,10 @@ p{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    margin-right: 29vw;
+    margin-right: 10vw;
     float: right;
     height: 53vh;
-    width: 20%;
+    width: 40%;
 }
 
 footer {
@@ -75,5 +75,16 @@ footer {
     footer{
     width: 100%;
     margin-top: 20px;
+        }
+        p{
+            font-size: 1.1rem;
+        }
+    #container{
+        width: 100%;
+        height: 60vh;
+        margin-right: 0;
+        }
+        span{
+            margin-left: 1vw;
         }
 }
