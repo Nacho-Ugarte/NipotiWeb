@@ -1,8 +1,8 @@
 body{
     background-image: url(../img/loser-mobileFinal.png);
     background-repeat:no-repeat;
-    background-position-x:center;
-    background-position-y:center;
+    background-position:center center;
+    background-attachment: fixed;
     background-size: cover;
-    height: 45vw;
+    height: 100vh;
 }

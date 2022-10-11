@@ -1,17 +1,17 @@
 const { Router } = require("express");
 const codigos = require("../json/Codes.json")
 const { User } = require("../db");
-const Code = require("../models/Code");
+
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-    const { dni, name, surname, code, telephone } = req.body
+router.post("/", async (req, res) => {
+    const { dni, nombre, apellido, codigo, celular } = req.body
     let login = await User.findOne({
         where: { dni: dni,
-            // name:name,
-            // surname:surname,
-            // telephone:telephone
+            // nombre:nombre,
+            // apellido:apellido,
+            // celular:celular
         }
     })
 
@@ -20,36 +20,35 @@ router.get("/", async (req, res) => {
             //Si tu usuario ya entro a la pagina
             if (login) {
                 //Si ya tiene un codigo exitoso
-                let searchExitCode = await login.cargas.find((ele) => ele.result === "win")
+                let searchExitCode = await login.cargas.find((ele) => ele.resultado === "win")
                 if(searchExitCode){
-                    res.send("Ya ganaste un plato de pasta, no puedes ingresar otro")
+                    res.json({result:"NO WIN",loser:login})
                 }
 
                 //Si no tiene un codigo exitoso
                 else{
-                    const cargado = codigos.find((ele) => ele.codigo === code)
-
-                if (cargado.nuevo === false) {
-                    console.log(login)
+                const cargado = codigos.find((ele) => ele.codigo === codigo)
+                    
+                if (cargado) {
+                    console.log(cargado)
                     cargado.nuevo = true
                     login.update({
                         ...login,
                         cargas:[...login.cargas,{
-                            codigo:code,
-                            result: "win"
+                            codigo:codigo,
+                            resultado: "win"
                         }]
                     })
-                    res.send("GANADOR")
+                    res.json({result:"WIN",winner:login})
                 }else{
                     login.update({
                         ...login,
                         cargas:[...login.cargas,{
-                            codigo:code,
-                            result: "lose"
+                            codigo:codigo,
+                            resultado: "lose"
                         }]
                     })
-                    res.send("NO GANASTE")
-                    console.log(login)
+                    res.json({result:"NO WIN", loser:login})
                 }
                 }
                 
@@ -59,34 +58,34 @@ router.get("/", async (req, res) => {
 
                 const userCreated = await User.create({
                     dni:dni,
-                    name:name,
-                    surname:surname,
-                    telephone:telephone,
+                    nombre:nombre,
+                    apellido:apellido,
+                    celular:celular,
                     cargas:[]
                 })
                 
                 
-                const cargado = codigos.find((ele) => ele.codigo === code)
+                const cargado = codigos.find((ele) => ele.codigo === codigo)
     
-                if (cargado.nuevo === false) {
+                if (cargado && cargado.nuevo) {
                     cargado.nuevo = true
-                    const modificaion = await userCreated.update({
+                    const winner = await userCreated.update({
                         ...userCreated,
                         cargas:[...userCreated.cargas,{
-                            codigo:code,
-                            result: "win"
+                            codigo:codigo,
+                            resultado: "win"
                         }]
                     })
-                    res.send("GANADOR")
+                    res.json({result:"WIN",winner:winner})
                 }else{
-                    userCreated.update({
+                    const loser = userCreated.update({
                         ...userCreated,
                         cargas:[...userCreated.cargas,{
-                            codigo:code,
-                            result: "lose"
+                            codigo:codigo,
+                            resultado: "lose"
                         }]
                     })
-                    res.send("NO GANASTE")
+                    res.json({result:"NO WIN",loser:loser})
                 }
     
             }
@@ -97,23 +96,23 @@ router.get("/", async (req, res) => {
 
 })
 
-router.post("/", async (req, res) => {
-    // const { dni, name, surname, code, telephone } = req.body
-    // console.log(req.body)
-    // let login = await User.findOrCreate({
-    //     dni,
-    //     name,
-    //     surname,
-    //     telephone,
-    //     where: { dni: dni },
-    // })
+// router.post("/", async (req, res) => {
+//     const { dni, nombre, apellido, code, celular } = req.body
+//     console.log(req.body)
+//     let login = await User.findOrCreate({
+//         dni,
+//         nombre,
+//         apellido,
+//         celular,
+//         where: { dni: dni },
+//     })
 
 
-        res.send("Conectado")
+//         res.send("Conectado")
 
 
 
 
-})
+// })
 
 module.exports = router;
