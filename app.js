@@ -1,3 +1,4 @@
+
 // let info = {
 //     nombre: nombre.split(' ').join('')
 // }
@@ -52,3 +53,5 @@ enviar.addEventListener("submit", (e) => {
     }
     lectura()
 })
+    
+
