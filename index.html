@@ -5,54 +5,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- <link rel="stylesheet" href="./styles/style.css" /> -->
     <!--Favicon puede que sea muy chico, modificar(?-->
     <link rel="icon" type="image/x-icon" href="./img/favicon-Nipoti.png" />
     <title>Busca pasta</title>
 </head>
 
-<body>
-
-    <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank"><img
-        src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
-    <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank" id="img_toRight"><img
-        src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
-
-        
+<body>  
     <div id="container">
-        <div class="texto"><p class="texto_p">CARGA EL CÓDIGO JUNTO A TUS DATOS</p>
+        <div class="texto"><p class="texto_p">CARGA EL CÓDIGO <br> JUNTO A TUS DATOS</p>
         </div>
-        <form target="_blank">
+        <form target="_blank" autocomplete="off" class="formulario">
             <!-- codigo -->
             <div class="form__code">
                 <div class="grupo">
                     <label for="codigo">Código</label>
-                    <input type="codigo" />
+                    <input class="codigo" type="codigo" />
                 </div>
             </div>
-            <!-- nombre -->
-            <div class="form_line">
-                <div class="grupo">
-                    <label for="nombre">Nombre</label>
-                    <input type="nombre" id="nombre" />
-                </div>
-                <!-- apellido -->
-                <div class="grupo">
-                    <label for="apellido">Apellido</label>
-                    <input type="apellido" id="apellido" />
-                </div>
+            
+
+            <div class="grupo">
+                <label for="nombre">Nombre</label>
+                <input type="nombre" class="nombre" id="nombre" />
             </div>
-            <!-- dni -->
-            <div class="form_line">
-                <div class="grupo">
-                    <label for="dni">DNI</label>
-                    <input type="dni" placeholder="(Sin puntos)" id="documento" />
-                </div>
-                <!-- celular -->
-                <div class="grupo">
-                    <label for="celular">Celular</label>
-                    <input type="celular" id="telefono" />
-                </div>
+            <!-- apellido -->
+            <div class="grupo">
+                <label for="apellido">Apellido</label>
+                <input class="apellido" type="apellido" id="apellido" />
+            </div>
+
+            <div class="grupo">
+                <label for="dni">DNI</label>
+                <input class="dni" type="dni" placeholder="         (Sin puntos)" id="documento" />
+            </div>
+            <!-- celular -->
+            <div class="grupo">
+                <label for="celular">Celular</label>
+                <input class="celular" type="celular" id="telefono" />
             </div>
 
             <div id="lower">
@@ -62,7 +53,17 @@
         </form>
     </div>
 
+    <footer>
+        <div class="footer_links">
+            <a title="Seguir en Facebook" href="https://www.facebook.com/nipotiristorante" target="_blank"><img
+                src="./img/logo-fb.png" alt="Seguir en Facebook" /></a>
+            <a title="Seguir en Instagram" href="https://www.instagram.com/nipotiristorante" target="_blank" id="img_toRight"><img
+                src="./img/logo-ig.png" alt="Seguir en Instagram" /></a>
+            <b> @nipotiristorante </b>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js%22%3E"></script>
     <script src="./app.js"></script>
 </body>
 
